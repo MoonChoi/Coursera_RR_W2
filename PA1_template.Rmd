@@ -1,5 +1,5 @@
 ---
-title: "eproducible Research: Peer Assessment 1"
+title: "Reproducible Research: Peer Assessment 1"
 author: "Moon Choi"
 date: '2017 1 22 '
 output:
@@ -10,7 +10,6 @@ output:
 ## Loading and preprocessing the data
 1.Load the data (i.e. read.csv())
 ```{r, echo = TRUE}
-rm(list=ls())
 library(ggplot2)
 unzip(zipfile="activity.zip")
 rawData <- read.csv("activity.csv")
