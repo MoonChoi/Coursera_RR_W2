@@ -1,6 +1,6 @@
 ---
 title: "eproducible Research: Peer Assessment 1"
-author: "Mßoon Choi"
+author: "Moon Choi"
 date: '2017 1 22 '
 output:
   html_document:
