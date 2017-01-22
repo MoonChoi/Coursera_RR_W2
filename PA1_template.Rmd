@@ -10,6 +10,7 @@ output:
 ## Loading and preprocessing the data
 1.Load the data (i.e. read.csv())
 ```{r, echo = TRUE}
+rm(list=ls())
 library(ggplot2)
 unzip(zipfile="activity.zip")
 rawData <- read.csv("activity.csv")
@@ -42,7 +43,7 @@ stepsEachDay <- aggregate(steps ~ date, rawData, sum, na.rm=TRUE)
 ```
 2.If you do not understand the difference between a histogram and a barplot, research the difference between them. Make a histogram of the total number of steps taken each day
 ```{r, echo = TRUE}
-qplot(stepsEachDay$steps, xlab="total number of steps taken each day")
+qplot(stepsEachDay$steps, xlab="total number of steps taken each day", binwidth = 500)
 ```
 3.Calculate and report the mean and median of the total number of steps taken per day
 ```{r, echo = TRUE}
@@ -88,7 +89,7 @@ modiData <- modiDataTemp
 ```{r, echo = TRUE}
 modiStepsEachDay <- aggregate(steps ~ date, modiData, sum, na.rm=TRUE)
 
-qplot(modiStepsEachDay$steps, xlab="total number of steps taken each day")
+qplot(modiStepsEachDay$steps, xlab="total number of steps taken each day", binwidth = 500)
 
 returnText4th <- paste("Mean Value of steps taken per day is changed", mean(stepsEachDay$steps, na.rm=TRUE) ,"to", mean(modiStepsEachDay$steps, na.rm=TRUE)
                        ,", and median value is changed ",median(stepsEachDay$steps, na.rm=TRUE),"to",median(modiStepsEachDay$steps, na.rm=TRUE),".")
